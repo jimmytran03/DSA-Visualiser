@@ -1,0 +1,224 @@
+/* 🌟 Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f5f7fa;
+    min-height: 100vh;
+    color: #1f2937;
+    line-height: 1.6;
+}
+
+/* 🌟 Container */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 🌟 Header */
+h1 {
+    text-align: center;
+    color: #111827;
+    margin-bottom: 40px;
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+/* 🌟 Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.tab {
+    padding: 10px 20px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 30px;
+    color: #374151;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.tab:hover {
+    background: #f3f4f6;
+    transform: translateY(-2px);
+}
+
+.tab.active {
+    background: #0284c7;
+    color: white;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌟 Content Section */
+.content {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌟 Controls */
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+input, button {
+    padding: 10px 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.25s ease;
+}
+
+input:focus {
+    border-color: #0284c7;
+    outline: none;
+    box-shadow: 0 0 5px rgba(2, 132, 199, 0.2);
+}
+
+button {
+    background: #0284c7;
+    color: white;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0369a1;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 12px rgba(2, 132, 199, 0.2);
+}
+
+/* 🌟 Visualization Area */
+.visualization {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 10px;
+    border: 1px dashed #d1d5db;
+}
+
+/* 🌟 Array, Hash, Stack Items */
+.array-item, .hash-item, .stack-item, .node {
+    padding: 12px 16px;
+    background: #0284c7;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    min-width: 50px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.25s ease;
+}
+
+.array-item.highlight, .hash-item.highlight, .stack-item.highlight {
+    background: #0ea5e9;
+    transform: scale(1.08);
+    box-shadow: 0 4px 15px rgba(14, 165, 233, 0.2);
+}
+
+/* 🌟 Stack Container */
+.stack-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 🌟 Linked List */
+.linked-list {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.arrow {
+    font-size: 22px;
+    color: #4b5563;
+}
+
+/* 🌟 Tree Nodes */
+.tree-node {
+    background: #22c55e;
+    color: white;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    position: absolute;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 3px solid white;
+    transition: all 0.25s ease;
+}
+
+.tree-node.highlight {
+    background: #f59e0b;
+    transform: scale(1.15);
+}
+
+/* 🌟 Descriptions and Status */
+.description {
+    background: #f0f9ff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid #0284c7;
+    font-size: 0.95rem;
+}
+
+.status {
+    margin-top: 15px;
+    padding: 10px;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    border-radius: 6px;
+    color: #065f46;
+    font-weight: 500;
+}
+
+/* 🌟 Tree Container */
+.tree-container {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: auto;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Visualiser</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DSA Visualiser</h1>
+        
+        <div class="tabs">
+            <button class="tab active" onclick="showSection('arrays')">Arrays</button>
+            <button class="tab" onclick="showSection('hashing')">Hashing</button>
+            <button class="tab" onclick="showSection('twopointers')">Two Pointers</button>
+            <button class="tab" onclick="showSection('stack')">Stack</button>
+            <button class="tab" onclick="showSection('binarysearch')">Binary Search</button>
+            <button class="tab" onclick="showSection('trees')">Binary Trees</button>
+            <button class="tab" onclick="showSection('linkedlist')">Linked List</button>
+        </div>
+
+        <div class="content">
+            <!-- Arrays Section -->
+            <div id="arrays" class="section active">
+                <div class="description">
+                    <h2>🔢 Arrays</h2>
+                    <p>Arrays are collections of elements stored in contiguous memory locations. Each element can be accessed using its index.</p>
+                </div>
+                <div class="controls">
+                    <input type="text" id="arrayInput" placeholder="Enter comma-separated values">
+                    <button onclick="createArray()">Create Array</button>
+                    <button onclick="searchArray()">Search Element</button>
+                    <input type="number" id="searchValue" placeholder="Search value">
+                </div>
+                <div class="visualization" id="arrayVis"></div>
+                <div class="status" id="arrayStatus">Create an array to get started!</div>
+            </div>
+
+            <!-- Hashing Section -->
+            <div id="hashing" class="section">
+                <div class="description">
+                    <h2>🔑 Hash Tables</h2>
+                    <p>Hash tables use hash functions to map keys to indices, providing O(1) average case lookup time.</p>
+                </div>
+                <div class="controls">
+                    <input type="text" id="hashKey" placeholder="Key">
+                    <input type="text" id="hashValue" placeholder="Value">
+                    <button onclick="addToHash()">Add to Hash</button>
+                    <button onclick="searchHash()">Search Key</button>
+                    <button onclick="clearHash()">Clear</button>
+                </div>
+                <div class="visualization" id="hashVis"></div>
+                <div class="status" id="hashStatus">Add key-value pairs to see hashing in action!</div>
+            </div>
+
+            <!-- Two Pointers Section -->
+            <div id="twopointers" class="section">
+                <div class="description">
+                    <h2>👆 Two Pointers</h2>
+                    <p>Two pointers technique uses two pointers to traverse data structures, often used for finding pairs or palindromes.</p>
+                </div>
+                <div class="controls">
+                    <input type="text" id="twoPointerInput" placeholder="Enter sorted array (comma-separated)">
+                    <input type="number" id="targetSum" placeholder="Target sum">
+                    <button onclick="findTwoSum()">Find Two Sum</button>
+                    <button onclick="checkPalindrome()">Check Palindrome</button>
+                </div>
+                <div class="visualization" id="twoPointerVis"></div>
+                <div class="status" id="twoPointerStatus">Create an array and find two sum or check palindrome!</div>
+            </div>
+
+            <!-- Stack Section -->
+            <div id="stack" class="section">
+                <div class="description">
+                    <h2>📚 Stack</h2>
+                    <p>Stack follows LIFO (Last In, First Out) principle. Elements are added and removed from the top.</p>
+                </div>
+                <div class="controls">
+                    <input type="text" id="stackInput" placeholder="Enter value">
+                    <button onclick="pushStack()">Push</button>
+                    <button onclick="popStack()">Pop</button>
+                    <button onclick="peekStack()">Peek</button>
+                    <button onclick="clearStack()">Clear</button>
+                </div>
+                <div class="visualization" id="stackVis">
+                    <div class="stack-container" id="stackContainer"></div>
+                </div>
+                <div class="status" id="stackStatus">Stack is empty. Push some elements!</div>
+            </div>
+
+            <!-- Binary Search Section -->
+            <div id="binarysearch" class="section">
+                <div class="description">
+                    <h2>🔍 Binary Search</h2>
+                    <p>Binary search efficiently finds elements in sorted arrays by repeatedly dividing the search space in half.</p>
+                </div>
+                <div class="controls">
+                    <input type="text" id="binaryInput" placeholder="Enter sorted array (comma-separated)">
+                    <input type="number" id="binaryTarget" placeholder="Target value">
+                    <button onclick="createBinaryArray()">Create Array</button>
+                    <button onclick="startBinarySearch()">Start Binary Search</button>
+                </div>
+                <div class="visualization" id="binaryVis"></div>
+                <div class="status" id="binaryStatus">Create a sorted array and search for a target!</div>
+            </div>
+
+            <!-- Binary Trees Section -->
+            <div id="trees" class="section">
+                <div class="description">
+                    <h2>🌳 Binary Trees</h2>
+                    <p>Binary trees are hierarchical data structures where each node has at most two children (left and right). Great for searching and organizing data.</p>
+                </div>
+                <div class="controls">
+                    <input type="number" id="treeInput" placeholder="Enter value">
+                    <button onclick="addToTree()">Add Node</button>
+                    <button onclick="searchTree()">Search</button>
+                    <button onclick="traverseInorder()">Inorder Traversal</button>
+                    <button onclick="traversePreorder()">Preorder Traversal</button>
+                    <button onclick="clearTree()">Clear Tree</button>
+                </div>
+                <div class="visualization" id="treeVis"></div>
+                <div class="status" id="treeStatus">Add nodes to build a binary search tree!</div>
+            </div>
+
+            <!-- Linked List Section -->
+            <div id="linkedlist" class="section">
+                <div class="description">
+                    <h2>🔗 Linked List</h2>
+                    <p>Linked lists store elements in nodes, where each node contains data and a reference to the next node.</p>
+                </div>
+                <div class="controls">
+                    <input type="text" id="linkedInput" placeholder="Enter value">
+                    <button onclick="addToList()">Add Node</button>
+                    <button onclick="removeFromList()">Remove Last</button>
+                    <button onclick="searchList()">Search</button>
+                    <button onclick="clearList()">Clear</button>
+                </div>
+                <div class="visualization" id="linkedVis"></div>
+                <div class="status" id="linkedStatus">Add nodes to create a linked list!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include JavaScript files -->
+    <script src="js/global.js"></script>
+    <script src="js/arrays.js"></script>
+    <script src="js/hashing.js"></script>
+    <script src="js/twoPointers.js"></script>
+    <script src="js/stack.js"></script>
+    <script src="js/binarySearch.js"></script>
+    <script src="js/binaryTree.js"></script>
+    <script src="js/linkedList.js"></script>
+</body>
+</html>
