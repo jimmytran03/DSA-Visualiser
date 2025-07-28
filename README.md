@@ -16,5 +16,8 @@ Binary Trees – build, search, and traverse (inorder, preorder)
 
 Linked Lists – add, remove, and search nodes
 
+## 🖼️ Preview
+![Arrays Visualization](Example.png)
+
 
 
